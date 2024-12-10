@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stream Data Analytics Results</title>
+</head>
+<body>
+<h1>Stream Data Analytics Results</h1>
+<ul id="results">
+    <!-- Les résultats seront ajoutés ici en temps réel -->
+</ul>
+
+<script>
+    // Crée une nouvelle connexion SSE
+    const eventSource = new EventSource("/results-stream");
+
+    // Écoute les nouveaux messages et les ajoute à la liste
+    eventSource.onmessage = function(event) {
+        const newElement = document.createElement("li");
+        newElement.textContent = event.data;  // Contenu du message reçu
+        document.getElementById("results").appendChild(newElement);
+    };
+
+    eventSource.onerror = function() {
+        console.error("Erreur dans la connexion SSE");
+    };
+</script>
+</body>
+</html>

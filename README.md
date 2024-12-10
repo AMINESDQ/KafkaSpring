@@ -10,7 +10,7 @@
 
 ## Exercices
 
-### Exercice 1 : Configuration Docker
+### Exercice 1 :
 
 1. Créez le fichier `docker-compose.yml` pour démarrer les conteneurs Zookeeper et Kafka.
 
@@ -54,50 +54,16 @@ services:
 ```bash
 docker-compose up -d
 ```
+![create_topic](images/Docker-Container.png )
 
 3. Testez le fonctionnement de Kafka avec les commandes `kafka-console-producer` et `kafka-console-consumer`.
 
-### Exercice 2 : Service Producer Kafka
+  ![create_topic](images/create_topic.png)
+  ![create_topic](images/consumer.png)
+  ![create_topic](images/producer.png)
+### Exercice  :  
+# 1-Une application Web qui permet d'afficher les résultats du Stream Data Analytics en temps réel
 
-Créez un service REST qui produit des données dans un topic Kafka. Utilisez l'image `consumer.png` comme guide.
+![create_topic](images/PostmanSendMessagetoTopic.png)
+![create_topic](images/StreamDataRead.png)
 
-1. Définissez un contrôleur REST qui expose un endpoint pour publier des messages dans un topic Kafka.
-2. Utilisez les bibliothèques Spring Cloud Streams et Kafka Streams pour interagir avec Kafka.
-3. Testez votre service en envoyant des requêtes HTTP et vérifiez que les messages sont bien consommés par le topic Kafka.
-
-### Exercice 3 : Service Consumer Kafka
-
-Créez un service qui consomme les données du topic Kafka. Utilisez l'image `create_topic.png` comme guide.
-
-1. Implémentez un service qui écoute les messages du topic Kafka et les affiche dans les logs.
-2. Assurez-vous que le service démarre correctement et consomme les messages produits par le service producteur.
-
-### Exercice 4 : Service Supplier Kafka
-
-Créez un service qui fournit des données à publier dans le topic Kafka. Utilisez l'image `producer.png` comme guide.
-
-1. Implémentez un service qui génère aléatoirement des données et les envoie dans le topic Kafka.
-2. Vérifiez que les messages générés sont bien consommés par le service consommateur.
-
-### Exercice 5 : Service de Data Analytics Real Time Stream Processing
-
-Créez un service qui traite en temps réel les données du topic Kafka. Utilisez l'image `StreamDataRead.png` comme guide.
-
-1. Implémentez un service qui consomme les messages du topic Kafka et effectue des analyses en temps réel.
-2. Affichez les résultats des analyses dans les logs.
-
-### Exercice 6 : Application Web
-
-Créez une application web qui affiche en temps réel les résultats du traitement de flux de données. Utilisez les images `PostmanSendMessagetoTopic.png` et `Docker-Container.png` comme guides.
-
-1. Créez une application web qui se connecte aux services Kafka et affiche les résultats des analyses en temps réel.
-2. Utilisez les bibliothèques Spring Cloud Streams et Kafka Streams pour interagir avec les services Kafka.
-3. Testez votre application web en envoyant des messages dans le topic Kafka et vérifiez que les résultats s'affichent correctement.
-
-## Bonus
-
-- Ajoutez des tests unitaires et d'intégration pour vos services Kafka.
-- Mettez en place des alertes et des métriques pour surveiller votre architecture Kafka.
-- Implémentez des fonctionnalités avancées comme la réplication, le partitionnement ou la gestion des offsets.
-
-N'hésitez pas à me contacter si vous avez d'autres questions !
